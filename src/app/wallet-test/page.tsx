@@ -3,6 +3,7 @@
 import { ConnectButton, useConnectWallet, useCurrentAccount, useCurrentWallet, useWallets } from '@mysten/dapp-kit';
 import { EnhancedConnectWallet } from '@/components/ConnectWallet';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function WalletTestPage() {
   const currentAccount = useCurrentAccount();
@@ -54,11 +55,14 @@ export default function WalletTestPage() {
                 >
                   <div className="flex items-center mb-2">
                     {wallet.icon && (
-                      <img 
-                        src={wallet.icon} 
-                        alt={`${wallet.name} icon`} 
-                        className="w-6 h-6 mr-2" 
-                      />
+                      <div className="relative w-6 h-6 mr-2">
+                        <Image 
+                          src={wallet.icon} 
+                          alt={`${wallet.name} icon`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                     )}
                     <span className="font-medium">{wallet.name}</span>
                   </div>
