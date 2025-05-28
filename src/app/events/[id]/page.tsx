@@ -1,13 +1,31 @@
+"use client";
+
 import { getEventById, formatDate } from "@/lib/mockData";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
-export default function EventDetailPage({
-  params,
-}: {
+type Props = {
   params: { id: string }
-}) {
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const event = getEventById(params.id);
+  
+  if (!event) {
+    return {
+      title: '活动未找到'
+    };
+  }
+
+  return {
+    title: event.title,
+    description: event.description
+  };
+}
+
+export default function EventDetailPage({ params }: Props) {
   const event = getEventById(params.id);
   
   if (!event) {
