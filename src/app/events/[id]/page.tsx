@@ -3,14 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-interface PageProps {
-  params: { id: string }
-  searchParams: Record<string, string | string[] | undefined>
-}
-
-export default async function EventDetailPage({
+export default function EventDetailPage({
   params,
-}: PageProps) {
+}: {
+  params: { id: string }
+}) {
   const event = getEventById(params.id);
   
   if (!event) {
