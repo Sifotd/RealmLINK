@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 
 type Props = {
   params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Record<string, string | string[] | undefined>
 }
 
 export default async function EventDetailPage({ params }: Props) {
