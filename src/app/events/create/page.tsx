@@ -5,7 +5,12 @@ import { createEvent } from "@/lib/mockData";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function CreateEventPage() {
+type Props = {
+  params: {}
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export default function CreateEventPage({ params }: Props) {
   const router = useRouter();
   const [formData, setFormData] = useState({
     creatorAddress: "0x123456789abcdef123456789abcdef123456789a", // 假设这是当前连接的钱包地址

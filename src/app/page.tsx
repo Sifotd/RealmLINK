@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-export default function Home() {
+type Props = {
+  params: {}
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export default function Home({ params }: Props) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}

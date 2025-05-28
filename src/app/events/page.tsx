@@ -1,7 +1,12 @@
 import { getEvents } from "@/lib/mockData";
 import EventCard from "@/components/EventCard";
 
-export default function EventsPage() {
+type Props = {
+  params: {}
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export default function EventsPage({ params }: Props) {
   const events = getEvents();
 
   return (
