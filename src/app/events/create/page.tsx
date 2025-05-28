@@ -5,11 +5,6 @@ import { createEvent } from "@/lib/mockData";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-type Props = {
-  params: Record<string, never>
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
 export default function CreateEventPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({

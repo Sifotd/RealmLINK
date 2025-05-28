@@ -1,10 +1,5 @@
 import Link from "next/link";
 
-type Props = {
-  params: Record<string, never>
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
