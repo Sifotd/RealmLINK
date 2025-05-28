@@ -8,7 +8,7 @@ export function ConnectWallet() {
   return (
     <div className="connect-wallet-wrapper">
       <ConnectButton 
-        connectText="连接钱包"
+        connectText="Connect Wallet"
         className="sui-connect-button" 
       />
     </div>
