@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-type Props = {
+export default function EventDetailPage({
+  params,
+}: {
   params: { id: string }
-}
-
-export default function EventDetailPage({ params }: Props) {
+}) {
   const event = getEventById(params.id);
   
   if (!event) {
