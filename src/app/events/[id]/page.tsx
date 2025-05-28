@@ -5,14 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-type PageParams = {
-  params: {
-    id: string;
-  };
-};
-
-export default function EventDetailPage({ params }: PageParams) {
-  const event = getEventById(params.id);
+export default async function EventDetailPage({
+  params,
+}: {
+  params: { id: string }
+}) {
+  const event = await Promise.resolve(getEventById(params.id));
   
   if (!event) {
     notFound();
