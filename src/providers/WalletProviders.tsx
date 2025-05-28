@@ -22,28 +22,12 @@ const queryClient = new QueryClient({
   },
 });
 
-// 钱包弹窗自定义文本
-const walletModalLabels = {
-  heading: '连接钱包',
-  description: '选择下列钱包之一连接到门票销售平台',
-  install: '安装',
-  connect: '连接',
-  connected: '已连接',
-  getWallet: '获取钱包',
-  learnMore: '了解更多',
-  qrCode: {
-    heading: '通过二维码连接',
-    description: '使用手机扫描二维码',
-  },
-};
-
 export function WalletProviders({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <SuiClientProvider networks={networkConfig} defaultNetwork="mainnet">
         <WalletProvider 
           autoConnect={false} // 不自动连接
-          modalLabels={walletModalLabels} // 自定义文本
           preferredWallets={['Sui Wallet', 'Ethos Wallet', 'Suiet']} // 优先显示的钱包
         >
           {children}

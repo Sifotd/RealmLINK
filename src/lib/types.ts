@@ -2,8 +2,8 @@ export interface Event {
   id: string;
   title: string;
   description: string;
-  startTime: Date;
-  endTime: Date;
+  startTime: string;
+  endTime: string;
   price: number;
   maxTickets: number;
   remainingTickets: number;

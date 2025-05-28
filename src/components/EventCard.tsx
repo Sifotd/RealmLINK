@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Event, formatDate } from "@/lib/mockData";
+import { Event } from "@/lib/types";
+import { formatDate } from "@/lib/mockData";
 
 interface EventCardProps {
   event: Event;

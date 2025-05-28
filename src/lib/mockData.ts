@@ -1,15 +1,4 @@
-export interface Event {
-  id: string;
-  title: string;
-  description: string;
-  previewImageUrl: string;
-  startTime: string;
-  endTime: string;
-  maxTickets: number;
-  remainingTickets: number;
-  price: number;
-  creatorAddress: string;
-}
+import { Event } from "./types";
 
 export const mockEvents: Event[] = [
   {
@@ -99,4 +88,4 @@ export const buyTicket = (eventId: string, quantity: number = 1): boolean => {
   
   event.remainingTickets -= quantity;
   return true;
-}; 
+} 
